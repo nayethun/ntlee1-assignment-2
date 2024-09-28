@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KMeans Clustering Demo</title>
+    <!-- Link to the stylesheet in the static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>KMeans Clustering Demo</h1>
+    
+    <label for="num-clusters">Number of Clusters (k):</label>
+    <input type="number" id="num-clusters" value="3" min="1">
+    
+    <label for="initialization-method">Initialization Method:</label>
+    <select id="initialization-method">
+        <option value="random">Random</option>
+        <option value="farthest">Farthest First</option>
+        <option value="kmeans++">KMeans++</option>
+        <option value="manual">Manual</option>
+    </select>
+    
+    <button onclick="generateData()">Generate New Dataset</button>
+    <button onclick="initializeCentroids()">Initialize Centroids</button>
+    <button onclick="stepKMeans()">Step through KMeans</button>
+    <button onclick="runToConvergence()">Run to Convergence</button>
+    <button onclick="reset()">Reset Algorithm</button>
+
+    <canvas id="plot" width="600" height="600" style="border:1px solid #000000;"></canvas>
+    
+    <!-- Link to the JavaScript file in the static folder -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
